@@ -96,10 +96,10 @@ socket.on('send-players-exist', function (newPlayers) {
 
 socket.on('send-id', function (id) {
     playerLocal.id = id;
+    alert("Cual es tu nombre?")
 });
 
 socket.on('new-player', function (newPlayer) {
-
     if (playerLocal.id !== newPlayer.id) {
         playersList.push(newPlayer);
         renderPlayer(newPlayer);

@@ -12,10 +12,9 @@ server.listen(8080, function () {
 });
 
 io.on('connection', function (socket) {
-
     io.to(socket.id).emit('send-id', socket.id);
-
     io.to(socket.id).emit('send-players-exist', players);
+
 
     let newPlayer = { id: socket.id, x: 0, y: 0 };
     players.push(newPlayer);
@@ -40,6 +39,8 @@ io.on('connection', function (socket) {
         io.emit('player-deleted', socket.id);
 
     });
+
+    socket.on('player-set-name', (playerName, ))
 
 });
 
